@@ -1,0 +1,35 @@
+/* Linhas do orçamento, totais e mensagens */
+.hd, .row {
+  display: grid;
+  grid-template-columns: 1fr 80px 84px 100px 100px 40px;
+  gap: 8px;
+}
+
+.hd { font-size: 13px; color: var(--mute); font-weight: 600; }
+.hd span:nth-child(n+4) { text-align: right; }
+
+.row { align-items: end; padding: 10px 0; border-top: 1px dashed var(--line); }
+.row .t { font-weight: 600; padding: 9px 0; text-align: right; white-space: nowrap; }
+
+.tot {
+  margin-left: auto;
+  max-width: 340px;
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+.tot div { display: flex; justify-content: space-between; gap: 12px; }
+.tot .big {
+  background: var(--navy);
+  color: var(--yel);
+  border-radius: 5px;
+  padding: 10px 12px;
+  font: 700 22px "Space Grotesk", system-ui, sans-serif;
+}
+
+.msg {
+  font-size: 14px;
+  color: var(--mute);
+  min-height: 20px;
+  text-align: center;
+}

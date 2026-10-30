@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Orçamentos de obra</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/budget.css">
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <h1>Orçamentos de obra</h1>
+    <p>Preenche, confirma os valores e descarrega o PDF.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>A minha empresa</h2>
+      <div class="g">
+        <label>Nome ou empresa<input id="eNome" autocomplete="off"></label>
+        <label>NIF<input id="eNif" inputmode="numeric"></label>
+        <label>Telefone<input id="eTel" type="tel"></label>
+        <label>Email<input id="eMail" type="email"></label>
+        <label class="wide">Morada<input id="eMor"></label>
+        <label class="wide">Logótipo (opcional)<input id="eLogo" type="file" accept="image/png,image/jpeg"></label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cliente e obra</h2>
+      <div class="g">
+        <label>Nome do cliente<input id="cNome"></label>
+        <label>NIF do cliente<input id="cNif" inputmode="numeric"></label>
+        <label>Contacto<input id="cTel"></label>
+        <label>Morada do cliente<input id="cMor"></label>
+        <label class="wide">Local da obra<input id="obra"></label>
+        <label class="wide">Descrição do trabalho<textarea id="desc" placeholder="Ex.: Remodelação da casa de banho, com troca de louças e azulejos."></textarea></label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Orçamento</h2>
+      <div class="g g--top">
+        <label>Número<input id="num"></label>
+        <label>Data<input id="data" type="date"></label>
+        <label>Validade (dias)<input id="val" type="number" min="1" value="30"></label>
+      </div>
+
+      <div class="hd">
+        <span>Trabalho ou material</span><span>Qtd.</span><span>Unid.</span><span>Preço unit. (€)</span><span>Total</span><span></span>
+      </div>
+      <div id="rows"></div>
+      <button id="add" class="btn-add" type="button">+ Adicionar linha</button>
+
+      <div class="g g--bottom">
+        <label>Desconto (€)<input id="disc" type="number" min="0" step="0.01" value="0"></label>
+        <label>IVA
+          <select id="iva">
+            <option value="23">23%</option>
+            <option value="6">6% (reabilitação)</option>
+            <option value="0">Sem IVA</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="tot">
+        <div><span>Subtotal</span><b id="sub"></b></div>
+        <div><span>Desconto</span><b id="dsc"></b></div>
+        <div><span>IVA</span><b id="ivv"></b></div>
+        <div class="big"><span>Total</span><span id="tt"></span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Condições</h2>
+      <div class="g">
+        <label>Prazo de execução<input id="prazo" placeholder="Ex.: 2 semanas"></label>
+        <label>IBAN para pagamento<input id="iban" placeholder="PT50 ..."></label>
+        <label class="wide">Pagamento<input id="pag" value="50% no início da obra e 50% no final."></label>
+        <label class="wide">Notas<textarea id="notas" placeholder="Ex.: Materiais incluídos. Prazo estimado: 2 semanas."></textarea></label>
+      </div>
+    </section>
+
+    <button class="pri" id="pdf" type="button">Descarregar PDF</button>
+    <div class="msg" id="msg"></div>
+
+    <section>
+      <h2>Orçamentos guardados</h2>
+      <div class="btn-group">
+        <button id="novo" type="button">Novo orçamento</button>
+        <button id="gua" type="button">Guardar no histórico</button>
+      </div>
+      <div id="lista"></div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/budget.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
