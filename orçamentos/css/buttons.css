@@ -1,0 +1,29 @@
+/* Botões */
+button {
+  font: 600 15px Barlow, sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--ink);
+  padding: 9px 14px;
+}
+
+button.x {
+  border-color: var(--line);
+  padding: 9px 0;
+  color: var(--mute);
+}
+button.x.btn-text { padding: 9px 12px; }
+
+button.pri {
+  background: var(--yel);
+  border-color: var(--yel);
+  color: #1f2a37;
+  font-size: 18px;
+  padding: 14px 22px;
+  width: 100%;
+}
+
+.btn-add { margin-top: 8px; }
+.btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }

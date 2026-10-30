@@ -1,0 +1,11 @@
+/* Lista de orçamentos guardados */
+.hi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+.hi span { display: block; font-size: 14px; color: var(--mute); }
+.hi div:last-child { display: flex; gap: 6px; flex-shrink: 0; }

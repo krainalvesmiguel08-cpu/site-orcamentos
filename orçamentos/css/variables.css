@@ -1,0 +1,31 @@
+/* Cores e tema (claro / escuro) */
+:root {
+  --bg: #eaf0f8;
+  --card: #fff;
+  --ink: #14213d;
+  --mute: #566683;
+  --line: #c9d5e8;
+  --navy: #12306b;
+  --yel: #ff7a2f;
+  --field: #f4f7fc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14191f;
+    --card: #1d242d;
+    --ink: #eef0f2;
+    --mute: #9aa4af;
+    --line: #34404d;
+    --field: #151b22;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14191f;
+  --card: #1d242d;
+  --ink: #eef0f2;
+  --mute: #9aa4af;
+  --line: #34404d;
+  --field: #151b22;
+}

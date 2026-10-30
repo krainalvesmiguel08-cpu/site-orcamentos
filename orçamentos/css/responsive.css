@@ -1,0 +1,14 @@
+/* Telemóvel */
+@media (max-width: 640px) {
+  .hd { display: none; }
+  .row {
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 8px;
+  }
+  .row .d { grid-column: 1 / -1; }
+  .row .t { text-align: left; }
+  .row .rm { justify-self: end; }
+}
